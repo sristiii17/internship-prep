@@ -87,3 +87,52 @@ nav a:hover {
     border-radius: 8px;
     text-decoration: none;
 }
+
+.light-mode{
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.light-mode section{
+    background-color: white;
+    color: #111827;
+}
+
+.light-mode p,
+.light-mode li{
+    color: #374151;
+}
+
+.light-mode nav{
+    background-color: #d1d5db;
+}
+
+.light-mode header,
+.light-mode footer{
+    background-color: #d1d5db;
+}
+
+.light-mode h1,
+.light-mode h2{
+    color: #ec4899;
+}
+
+.light-mode button{
+    background-color: #111827;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#themeBtn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #ec4899;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
