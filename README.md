@@ -8,6 +8,7 @@ This repository contains my daily practice projects while preparing for software
 - To-Do List App
 - Calculator App
 - Stopwatch App
+- Weather App
 
 ## Technologies Used
 
