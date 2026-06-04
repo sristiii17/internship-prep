@@ -48,3 +48,9 @@ button:hover{
     margin-top: 20px;
     color: #111827;
 }
+
+#loading{
+    margin-top: 10px;
+    color: #4c1d95;
+    font-weight: bold;
+}

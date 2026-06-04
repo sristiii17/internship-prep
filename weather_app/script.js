@@ -9,6 +9,7 @@ async function getWeather(){
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     try{
+        document.getElementById("loading").innerHTML = "Loading...";
 
         let response = await fetch(url);
 
@@ -29,6 +30,7 @@ async function getWeather(){
             <p> Weather: ${data.weather[0].main}</p>
             <p>Wind Speed: ${data.wind.speed} m/s</p>
         `;
+        document.getElementById("loading").innerHTML = "";
 
     }
 
@@ -36,5 +38,6 @@ async function getWeather(){
 
         document.getElementById("weatherResult")
         .innerHTML = "Something went wrong";
+        document.getElementById("loading").innerHTML = "";
     }
 }
