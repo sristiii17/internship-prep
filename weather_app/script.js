@@ -1,3 +1,54 @@
+loadSearchHistory();
+
+function saveSearch(city){
+
+    let searches =
+    JSON.parse(localStorage.getItem("searches")) || [];
+
+    if(!searches.includes(city)){
+
+        searches.unshift(city);
+
+        if(searches.length > 5){
+            searches.pop();
+        }
+
+        localStorage.setItem(
+            "searches",
+            JSON.stringify(searches)
+        );
+    }
+
+    loadSearchHistory();
+}
+
+function loadSearchHistory(){
+
+    let searches =
+    JSON.parse(localStorage.getItem("searches")) || [];
+
+    let history =
+    document.getElementById("searchHistory");
+
+    history.innerHTML = "";
+
+    searches.forEach(function(city){
+
+        let li =
+        document.createElement("li");
+
+        li.innerText = city;
+
+        li.onclick = function(){
+
+            document.getElementById("cityInput").value = city;
+
+            getWeather();
+        };
+
+        history.appendChild(li);
+    });
+}
 async function getWeather(){
 
     let city =
@@ -31,7 +82,7 @@ async function getWeather(){
             <p>Wind Speed: ${data.wind.speed} m/s</p>
         `;
         document.getElementById("loading").innerHTML = "";
-
+        saveSearch(city);
     }
 
     catch(error){

@@ -54,3 +54,16 @@ button:hover{
     color: #4c1d95;
     font-weight: bold;
 }
+
+#searchHistory{
+    list-style: none;
+    padding: 0;
+}
+
+#searchHistory li{
+    background-color: #f3f4f6;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
