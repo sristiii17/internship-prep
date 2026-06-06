@@ -91,4 +91,12 @@ async function getWeather(){
         .innerHTML = "Something went wrong";
         document.getElementById("loading").innerHTML = "";
     }
-}
+} 
+document
+.getElementById("clearHistoryBtn")
+.addEventListener("click", function(){
+
+    localStorage.removeItem("searches");
+
+    loadSearchHistory();
+});

@@ -66,4 +66,13 @@ button:hover{
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
+} 
+
+#clearHistoryBtn{
+    margin-top: 10px;
+    background-color: #ef4444;
+}
+
+#clearHistoryBtn:hover{
+    background-color: #dc2626;
 }
