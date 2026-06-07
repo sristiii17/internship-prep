@@ -1,3 +1,6 @@
+let currentTemp = null;
+let isCelsius = true;
+
 loadSearchHistory();
 
 function saveSearch(city){
@@ -66,6 +69,8 @@ async function getWeather(){
 
         let data = await response.json();
 
+        currentTemp = data.main.temp;
+
         if(data.cod === "404"){
 
             document.getElementById("weatherResult")
@@ -77,7 +82,11 @@ async function getWeather(){
         document.getElementById("weatherResult")
         .innerHTML = `
             <h2>${data.name}</h2>
-            <p>Temperature: ${data.main.temp}°C</p>
+            <p>
+                Temperature:
+                <span id="temperature">${data.main.temp}</span>
+                <span id="unit">°C</span>
+            </p>
             <p> Weather: ${data.weather[0].main}</p>
             <p>Wind Speed: ${data.wind.speed} m/s</p>
         `;
@@ -99,4 +108,50 @@ document
     localStorage.removeItem("searches");
 
     loadSearchHistory();
+});
+
+document
+.getElementById("unitToggle")
+.addEventListener("click", function(){
+
+    if(currentTemp === null){
+        return;
+    }
+
+    let displayTemp;
+
+    if(isCelsius){
+
+        displayTemp =
+        (currentTemp * 9/5) + 32;
+
+        this.innerText = "Switch to °C";
+
+        isCelsius = false; 
+
+        document.getElementById("temperature")
+        .innerText = displayTemp.toFixed(1);
+
+        document.getElementById("unit")
+        .innerText = "°F";
+
+    } 
+    else {
+
+        displayTemp = currentTemp;
+
+        this.innerText = "Switch to °F";
+
+        isCelsius = true;
+        document.getElementById("temperature")
+        .innerText = displayTemp.toFixed(1);
+
+        document.getElementById("unit")
+        .innerText = "°C";
+    }
+
+    document
+    .getElementById("temperature")
+    .innerText =
+    displayTemp.toFixed(1);
 });
