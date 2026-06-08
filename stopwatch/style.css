@@ -24,4 +24,16 @@ button{
 
 h2{
     font-size: 48px;
+} 
+
+#lapList{
+    list-style: none;
+    padding: 0;
+}
+
+#lapList li{
+    background-color: #374151;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
 }

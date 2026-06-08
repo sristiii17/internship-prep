@@ -1,3 +1,5 @@
+let lapCount = 0;
+ 
 let seconds = 0;
 
 let timer = null;
@@ -45,4 +47,30 @@ function resetTimer(){
     seconds = 0;
 
     updateDisplay();
+
+    lapCount = 0;
+
+document.getElementById("lapList")
+.innerHTML = "";
+}
+
+function recordLap(){
+
+    if(seconds === 0){
+        return;
+    }
+
+    lapCount++;
+
+    let lap =
+    document.createElement("li");
+
+    lap.innerText =
+    `Lap ${lapCount} - ${
+        document.getElementById("display").innerText
+    }`;
+
+    document
+    .getElementById("lapList")
+    .appendChild(lap);
 }
