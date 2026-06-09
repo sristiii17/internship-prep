@@ -24,6 +24,10 @@ function createTask(taskTextValue){
 
     let taskText = document.createElement("span");
 
+    let editBtn = document.createElement("button");
+
+    editBtn.innerText = "Edit";
+
     taskText.innerText = taskTextValue;
 
     li.appendChild(taskText);
@@ -33,6 +37,8 @@ function createTask(taskTextValue){
         li.classList.toggle("completed");
 
         saveTasks();
+
+        
     });
 
     let deleteBtn = document.createElement("button");
@@ -46,8 +52,24 @@ function createTask(taskTextValue){
         li.remove();
 
         saveTasks();
-    };
+    }; 
+    editBtn.onclick = function(event){
 
+    event.stopPropagation();
+
+    let newTask = prompt(
+        "Edit task:",
+        taskText.innerText
+    );
+
+    if(newTask){
+
+        taskText.innerText = newTask;
+
+        saveTasks();
+    }
+};
+    li.appendChild(editBtn);
     li.appendChild(deleteBtn);
 
     taskList.appendChild(li);
@@ -83,11 +105,3 @@ function loadTasks(){
         }
     });
 }
-
-document.getElementById("taskInput")
-.addEventListener("keypress", function(event){
-
-    if(event.key === "Enter"){
-        addTask();
-    }
-});
