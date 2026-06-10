@@ -8,9 +8,9 @@ body{
 }
 
 .container{
-    border: 4px solid white;   
+    border: 4px solid rgb(235, 255, 217);   
     border-radius: 30px; 
-    background-color: #debbd6;
+    background-color: #b5edffc1;
     padding: 40px;
     border-radius: 10px;
     width: 400px;
