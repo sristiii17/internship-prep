@@ -10,15 +10,16 @@ function addTask(){
         alert("Please enter a task");
         return;
     }
-
-    createTask(input.value);
+    let priority =
+    document.getElementById("priority").value;
+    createTask(input.value,priority);
 
     saveTasks();
 
     input.value = "";
 }
 
-function createTask(taskTextValue){
+function createTask(taskTextValue, priority){
 
     let li = document.createElement("li");
 
@@ -40,6 +41,8 @@ function createTask(taskTextValue){
 
         
     });
+
+    li.classList.add(priority);
 
     let deleteBtn = document.createElement("button");
 
