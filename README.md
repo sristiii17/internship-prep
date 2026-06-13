@@ -2,13 +2,20 @@
 
 This repository contains my daily practice projects while preparing for software development internships.
 
-## Projects
+## Current Projects
 
 - Portfolio Website
-- To-Do List App
-- Calculator App
-- Stopwatch App
+- To-Do App
+  - Edit Tasks
+  - Delete Tasks
+  - Local Storage Support
+- Calculator
+- Stopwatch
+  - Lap Tracking
 - Weather App
+  - Search History
+  - Clear History
+  - Temperature Unit Toggle
 
 ## Technologies Used
 
