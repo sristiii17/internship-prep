@@ -1,5 +1,5 @@
 let lapCount = 0;
- 
+
 let seconds = 0;
 
 let timer = null;
@@ -50,20 +50,18 @@ function resetTimer(){
 
     lapCount = 0;
 
-document.getElementById("lapList")
-.innerHTML = "";
+    document.getElementById("lapList").innerHTML = "";
 }
 
 function recordLap(){
 
-    if(seconds === 0){
+    if(seconds === 0 || timer === null){
         return;
     }
 
     lapCount++;
 
-    let lap =
-    document.createElement("li");
+    let lap = document.createElement("li");
 
     lap.innerText =
     `Lap ${lapCount} - ${
@@ -74,3 +72,26 @@ function recordLap(){
     .getElementById("lapList")
     .appendChild(lap);
 }
+
+document.addEventListener("keydown", function(event){
+
+    if(event.code === "Space"){
+
+        event.preventDefault();
+
+        if(timer === null){
+            startTimer();
+        }
+        else{
+            stopTimer();
+        }
+    }
+
+    if(event.key.toLowerCase() === "r"){
+        resetTimer();
+    }
+
+    if(event.key.toLowerCase() === "l"){
+        recordLap();
+    }
+});
