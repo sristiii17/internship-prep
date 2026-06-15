@@ -1,6 +1,6 @@
 body{
     font-family: Arial;
-    background-color: #111827;
+    background-color: #89d389;
     color: white;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@ body{
 
 .container{
     text-align: center;
-    background-color: #1f2937;
+    background-color: #7bdbcd;
     padding: 30px;
     border-radius: 10px;
 }
@@ -32,7 +32,7 @@ h2{
 }
 
 #lapList li{
-    background-color: #374151;
+    background-color: #589d72;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
