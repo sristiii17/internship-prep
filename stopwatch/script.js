@@ -68,6 +68,15 @@ function recordLap(){
         document.getElementById("display").innerText
     }`;
 
+    lap.onclick = function(){
+
+    navigator.clipboard.writeText(
+        lap.innerText
+    );
+
+    alert("Lap copied!");
+};
+
     document
     .getElementById("lapList")
     .appendChild(lap);
