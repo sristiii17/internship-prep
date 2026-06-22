@@ -37,7 +37,17 @@ This repository contains projects I built while preparing for software developme
 * Recent search history
 * Clear search history
 * Loading indicator
-* Temperature unit toggle
+* Temperature unit toggle 
+
+## Last Updated
+
+- Portfolio Website
+- Todo App
+- Calculator
+- Stopwatch
+- Weather App
+
+Last updated: June 2026
 
 ## Technologies Used
 
